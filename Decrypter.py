@@ -2,8 +2,10 @@ from tkinter import *
 import numpy as np
 import random
 
+#Define characters:
 all = ' !"#$%&\()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~'
 
+#this function calculates the index of the character in the all array to make the decrytion possible.
 def get_index():
     k = key_entry.get()[1:(len(key_entry.get())-1)]
 
@@ -33,7 +35,7 @@ def get_index():
 
     
 
-
+#this function clears the listbox
 def listbox_clear():
     listbox_message.delete(0, 'end')
     key_entry.delete(0, 'end')
@@ -44,7 +46,7 @@ def listbox_clear():
 
 
 
-
+#Window main loop.
 app = Tk()
 
 app.title("Decrypter")
