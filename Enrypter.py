@@ -6,14 +6,15 @@ from tkinter import *
 
 
 
-
+#Define characters:
 
 all = ' !"#$%&\()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~'
 
 
 
 
-
+#This function finds the cipher to a random key created
+#it returns the and cipher created from encryption.
 def find_cypher():
     message = entry_message.get()
     len_m = len(message)
@@ -27,7 +28,7 @@ def find_cypher():
         j += 1
     s = ""
     cypher = s.join(cipher)
-    k= find_key(len_m, cipher, message)
+    k = find_key(len_m, cipher, message)
     
     listbox.insert(2, cypher)
     
@@ -36,7 +37,7 @@ def find_cypher():
     
 
 
-
+#This function creates the key to the corresponding cipher to encrypt the message
 def find_key(len_m, cipher, message):
     j = 0
     k = np.zeros(len_m)
@@ -49,7 +50,7 @@ def find_key(len_m, cipher, message):
 
 
 
-
+# this function defines to either create a new text file of the encrytion key or append a text file.
 def print_option():
     global a
     if var1.get() == 1:
@@ -58,13 +59,8 @@ def print_option():
         a = 'w'
     
     
-    
 
-
-
-
-
-
+#this function essentially writes the cipher and key to the text file.
 def submit():
     
     
@@ -82,18 +78,14 @@ def submit():
     fid.close()
 
 
-   
 
-
-
-
-
+# this function clears the input text box.
 def listbox_clear():
     listbox.delete(0, 'end')
 
     
 
-
+# the main loop is below.
 window = Tk()
 
 kvar = StringVar()
